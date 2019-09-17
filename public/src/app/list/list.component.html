@@ -1,0 +1,12 @@
+<fieldset>
+  <legend>Product List</legend>
+  <div *ngFor="let pro of products" class="list">
+    <div >
+      <img src="{{pro.imageUrl}}">
+      <h2>{{pro.title}}</h2>
+      <h2>${{pro.price}}</h2>
+      <button (click)="EditProduct(pro._id)">Edit</button>
+      <button (click)="DeleteProduct(pro._id)">Delete</button>
+    </div>
+  </div>
+</fieldset>

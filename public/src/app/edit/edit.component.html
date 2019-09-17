@@ -1,0 +1,26 @@
+<section>
+  <fieldset>
+    <legend>Creation</legend>
+    {{product | json}}
+    <form (submit)="EditProduct($event)" #bookForm ='ngForm'>
+      <div>
+        <p>{{errorsMessage.title}}</p>
+        <label>Title</label>
+        <input type="text"  name="title"
+               required minlength="4" maxlength="24" [(ngModel)]="product.title" #title = "ngModel">
+      </div>
+      <div>
+        <label>Price </label>
+        <input type="number"  name="price" [(ngModel)]="product.price">
+      </div>
+      <div>
+        <label>Image URL</label>
+        <input type="text"  name="imageUrl"
+               [(ngModel)]="product.imageUrl" >
+      </div>
+      <button >Edit</button>
+<!--      [disabled]="bookForm.invalid"-->
+      <button (click)="GoProduct($event)">Cancel</button>
+    </form>
+  </fieldset>
+</section>
